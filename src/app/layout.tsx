@@ -1,18 +1,19 @@
-import {Inter} from 'next/font/google'
+import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
 import '@/styles/globals.css';
+import Navbar from '@/components/Navbar';
 
 export const metadata = {
   title: 'Breadit',
   description: 'A Reddit clone built with Next.js and TypeScript.',
-}
+};
 
-const inter = Inter({subsets:['latin']})
+const inter = Inter({ subsets: ['latin'] });
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html
@@ -23,8 +24,11 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-screen pt-12  bg-slate-50 antialiased">
-        <NavBar />
-        <div className='container max-w-7xl mx-auto  h-full pt-12'>{children}</div>
+        <Navbar />
+
+        <div className="container max-w-7xl mx-auto  h-full pt-12">
+          {children}
+        </div>
       </body>
     </html>
   );
